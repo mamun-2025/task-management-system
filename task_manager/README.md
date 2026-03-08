@@ -42,43 +42,24 @@ Tools:
 ---
 
 ## 📂 Project Structure
+
 Task-Management-System/
 │
 ├── README.md
-│
-├── task_manager/                 # Main Django project folder
-│
-│   ├── task_manager/             # Django project settings
-│   │   ├── __init__.py
+├── .gitignore
+├── manage.py
+├── requirements.txt
+├── task_manager/
+│   ├── task_manager/
 │   │   ├── settings.py
 │   │   ├── urls.py
-│   │   ├── asgi.py
 │   │   └── wsgi.py
-│   │
-│   ├── tasks/                    # Django app (Task management)
-│   │
-│   │   ├── migrations/
-│   │   │
-│   │   ├── templates/
-│   │   │   └── tasks/
-│   │   │        ├── login.html
-│   │   │        └── signup.html
-│   │   │
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── forms.py
-│   │   ├── models.py
-│   │   ├── urls.py
-│   │   ├── views.py
-│   │   └── tests.py
-│   │
-│   ├── venv/                     # Virtual Environment
-│   │
-│   ├── .env                      # Environment variables
-│   ├── .gitignore
-│   ├── db.sqlite3
-│   ├── manage.py
-│   └── requirements.txt
+│   └── tasks/
+│       ├── templates/tasks/
+│       │   ├── login.html
+│       │   └── signup.html
+│       ├── views.py
+│       └── models.py
 
 --- 
 
