@@ -114,8 +114,6 @@ Implemented Features:
 
 Status: ✅ Completed
 
-```
-
 # ⏳ Step 3: Task Management (CRUD)
 
 Planned Features:
@@ -124,7 +122,29 @@ Planned Features:
 - Update Task
 - Delete Task
 
-Status: 🔄 In Progress
+### Task Model 
+- Fields: titile, description, status, priority, due_date, created_at
+- Each task is linked to a user(ForeignKey)
+- Status Choices: Pending, In Progress, Completed
+- Priority Choices: Low, Medium, High
+
+### Task Form
+- TaskForm(ModelForm) for handling task creation and update
+
+### URLs
+- `/` → Task List
+- `/task/create/` → Create Task
+- `/task/<id>/update/` → Update Task
+- `/task/<id>/delete/` → Delete Task
+
+### Templates
+- `task_list.html` → List all tasks
+- `task_form.html` → Create / Update task
+- `task_confirm_delete.html` → Confirm task deletion
+
+Status: ✅ Completed
+
+```
 
 # ⏳ Step 4: UI Improvement
 
@@ -132,7 +152,7 @@ Status: 🔄 In Progress
 - Responsive design
 - Clean UI
 
-Status: ⏳ Pending
+Status: 🔄 In Progress
 
 
 # ⏳ Step 5: Database Upgrade
