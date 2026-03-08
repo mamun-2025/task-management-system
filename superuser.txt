@@ -1,9 +1,0 @@
-
-http://127.0.0.1:8000/login/
-http://127.0.0.1:8000/signup/
-http://127.0.0.1:8000/admin_security/
-
-Username:mamun_bepari
-Email address:beparimamun708@gmail.com
-Password:2026april1
-Password (again):2026april1
