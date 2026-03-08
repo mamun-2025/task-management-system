@@ -1,0 +1,28 @@
+
+Commands/Files:
+1. from django.contrib.auth.models. import User
+2. from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
+English Practice:
+User model = It stores user information like username, email, and password.
+Form = A form is used to collect user input.
+1. I created a signup form using django's UserCreationForm.
+2. I wrote a view to handle user signup and auto-login after signup.
+3. I created login and logout views using Django's built-in authentication system.
+4. I added signup, login, and logout URLS in urls.py
+5. I created simple HTML templates for signup and login using Django templates tags.
+6. I created a login page for user authentication.
+7. Users can login using their username and password.
+8. The login page is available at /login/.
+9. I implemented a login system in my Django project.
+10. I created a signup page for new users.
+11. Users can register an account from the signup page.
+12. The signup page allows users to create a new account.
+13. New users can create an account using the signup page.
+14. The admin panel is used to manage the application data.
+15. Only the admin user can access the admin dashboard.
+16. I created a superuser to access the admin panel.
+17. I use the Django admin panel to manage users and data.
+18. Today I implemented the authentication system in my Django project. 
+    I created login and signup pages for users.
+    I also created a superuser to access the admin panel.

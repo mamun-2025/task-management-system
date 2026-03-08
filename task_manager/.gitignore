@@ -6,3 +6,5 @@ __pycache__/
 .env/
 venv/
 Django_project_setup.txt
+Authentication_System.txt
+superuser.txt

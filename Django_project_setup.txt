@@ -13,7 +13,13 @@ English Practice:
 3. I ran the Django development server and visited localhost.
 4. I created a Django app called tasks for managing tasks.
 5. I added tasks app in INSTALLED_APPS in settings.py.
-6. The development server is running on localhost.
-7. Try to understand meaning of techinical terms.
-8. I created a Django project to practice backend development.
-9. I'm learning Django and building small apps to improve my skills.
+6. I created migration files using makemigrations.
+7. I applied migrations to update the database.
+8. Now the Django server is running on localhost.
+9. The development server is running on localhost.
+10. Try to understand meaning of techinical terms.
+11. I created a Django project to practice backend development.
+12. I'm learning Django and building small apps to improve my skills.
+13. I crated a superuser for the Django admin panel.
+14. I logged into the admin dashboard.
+15. The admin panel helps manage database records.
