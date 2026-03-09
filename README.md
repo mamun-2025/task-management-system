@@ -12,7 +12,7 @@ The goal of this project is to learn an implement:
 - Django Backend Development
 - Authentication System
 - CRUD Operations
-- UI Improvement
+- Responsive UI Improvement
 - Database Upgrade
 - REST API
 - Deployment
@@ -31,7 +31,7 @@ Database:
 
 Frontend:
 - HTML
-- CSS
+- Tailwind CSS v4
 - JavaScript
 
 Tools:
@@ -45,22 +45,22 @@ Tools:
 
 Task-Management-System/
 │
-├── README.md
-├── .gitignore
-├── manage.py
-├── requirements.txt
-├── task_manager/
-│   ├── task_manager/
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   └── tasks/
-│       ├── templates/tasks/
-│       │   ├── login.html
-│       │   └── signup.html
-│       ├── views.py
-│       └── models.py
-
+├── README.md                <-- Project documentation and setup guide
+│
+└── task_manager/            <-- Main project directory
+    ├── core/                <-- Project configuration (settings.py, urls.py)
+    ├── tasks/               <-- Main application logic
+    │   ├── static/          <-- CSS/JS assets (Tailwind output.css)
+    │   ├── templates/       <-- HTML templates (base.html, dashboard.html)
+    │   ├── forms.py         <-- Django ModelForms styled with Tailwind
+    │   ├── models.py        <-- Task database models
+    │   └── views.py         <-- Dashboard logic and task views
+    ├── manage.py            <-- Django's command-line utility
+    ├── node_modules/        <-- Tailwind CSS v4 dependencies (Local only)
+    ├── package.json         <-- NPM script configurations
+    └── package-lock.json    <-- Locked versions of frontend dependencies
+    ├── .gitignore               <-- Specifies ignored files (venv, node_modules, etc.)
+    
 --- 
 
 ## ⚙️ Environment Setup
@@ -144,16 +144,16 @@ Planned Features:
 
 Status: ✅ Completed
 
-```
-
 # ⏳ Step 4: UI Improvement
 
-- Planned Features:
+- Implemented Features:
 - Responsive design
 - Clean UI
 
-Status: 🔄 In Progress
+Status: ✅ Completed
 
+
+```
 
 # ⏳ Step 5: Database Upgrade
 
@@ -162,7 +162,7 @@ Planned Features:
 - Connect Django with PostgreSQL
 - Migrate database from SQLite to PostgreSQL
 
-Status: ⏳ Pending
+Status: 🔄 In Progress
 
 
 ## ⏳ Step 6: REST API (Django REST Framework)
