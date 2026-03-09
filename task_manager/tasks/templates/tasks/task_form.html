@@ -1,8 +1,36 @@
 
-<h2>Task Form</h2>
-<form method="POST">
-   {% csrf_token %}
-   {{ form.as_p }}
-   <button type="submit">Submit</button>
-</form>
-<a href="{% url 'task_list' %}">Back to Task List</a>
+{% extends 'tasks/base.html' %}
+
+{% block title %}Task Form{% endblock %}
+
+{% block content %}
+
+<div class="max-w-lg mx-auto bg-gray-300 shadow rounded p-6">
+
+   <h2 class="text-x1 font-bold mb-4 bg-gray-400 p-2 rounded">
+      {% if form.instance.pk %}
+      Update Task
+      {% else %}
+      Create Task
+      {% endif %}
+   </h2>
+
+   <form method="POST">
+      {% csrf_token %}
+      <div class="space-y-4">
+         {{ form.as_p }}
+      </div>
+
+      <div class="mt-4 flex justify-between">
+         <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            Save
+         </button>
+         <a href="{% url 'task_list' %}" class="text-red-800 font-bold hover:underline">
+            Cancel
+         </a>
+      </div>
+   </form>
+
+</div>
+
+{% endblock %}

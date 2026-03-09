@@ -74,3 +74,20 @@ def task_delete(request, pk):
       task.delete()
       return redirect('task_list')
    return render(request, 'tasks/task_confirm_delete.html', {'task': task})
+
+
+# Dashboard view to display 
+@login_required
+def dashboard_view(request):
+   tasks = Task.objects.filter(user=request.user)
+
+   #filter logic
+   status_filter = request.GET.get('status')
+   if status_filter in ['pending', 'completed']:
+      tasks =tasks.filter(status=status_filter)
+   
+   priority_filter = request.GET.get('priority')
+   if priority_filter in ['Low', 'Medium', 'High']:
+      tasks = tasks.filter(priority=priority_filter)
+      
+   return render(request, 'tasks/dashboard.html', {'tasks': tasks })
