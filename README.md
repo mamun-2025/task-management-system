@@ -76,6 +76,10 @@ Task-Management-System/
 
 ## ⚙️ Environment Setup
 
+Repository Clone:
+git clone: https://github.com/mamun-2025/task-management-system 
+cd Task-Management-System
+
 Create virtual environment:
 python -m venv venv
 
@@ -84,9 +88,21 @@ Windows:
 venv\Scripts\activate
 
 Install dependencies:
+pip install -r requirements.txt
+npm install
 pip install django
 pip install psycopg2-binary
 pip install python-dotenv
+
+Database Migrations:
+python manage.py makemigrations 
+python manage.py migrate
+
+Tailwind built and runserver:
+npm run dev
+
+Server Run:
+python manage.py runserver
 
 ---
 
@@ -191,6 +207,13 @@ Planned Features:
 - Deployment (Render)
 
 ---
+
+## 📸 Screenshots
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Task List
+![Task List](screenshots/task_list.png)
 
 ## 👨‍💻 Author
 
