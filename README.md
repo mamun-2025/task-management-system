@@ -2,7 +2,7 @@
 # Django Task Manager
 
 A Task Management Web Application built with Django.
-This project is being developed step-by-step to practice Django backend development.
+Users can signup, login, create tasks, update tasks, and manage their daily work efficiently..
 
 ---
 
@@ -13,8 +13,8 @@ The goal of this project is to learn an implement:
 - Authentication System
 - CRUD Operations
 - Responsive UI Improvement
-- Database Upgrade
-- REST API
+- PostgreSQL Database Integration
+- REST API Development
 - Deployment
 
 ---
@@ -27,7 +27,7 @@ The goal of this project is to learn an implement:
 
 Database:
 - SQLite (Development)
-- PostgreSQL (Planned)
+- PostgreSQL
 
 Frontend:
 - HTML
@@ -41,13 +41,24 @@ Tools:
 
 ---
 
+## ✨ Features
+
+- User Authentication (Signup / Login / Logout)
+- Task CRUD Operations
+- Task Priority System
+- Task Status Tracking
+- Responsive UI with Tailwind CSS
+- PostgreSQL Database Integration
+
+---
+
 ## 📂 Project Structure
 
 Task-Management-System/
 │
 ├── README.md                <-- Project documentation and setup guide
 │
-└── task_manager/            <-- Main project directory
+└── task_manager/            <-- Main project directory(application)
     ├── core/                <-- Project configuration (settings.py, urls.py)
     ├── tasks/               <-- Main application logic
     │   ├── static/          <-- CSS/JS assets (Tailwind output.css)
@@ -59,7 +70,7 @@ Task-Management-System/
     ├── node_modules/        <-- Tailwind CSS v4 dependencies (Local only)
     ├── package.json         <-- NPM script configurations
     └── package-lock.json    <-- Locked versions of frontend dependencies
-    ├── .gitignore               <-- Specifies ignored files (venv, node_modules, etc.)
+    ├── .gitignore               <-- Specifies ignored files (venv, .env, node_modules, etc.)
     
 --- 
 
@@ -74,6 +85,8 @@ venv\Scripts\activate
 
 Install dependencies:
 pip install django
+pip install psycopg2-binary
+pip install python-dotenv
 
 ---
 
@@ -92,8 +105,8 @@ Completed:
 
 Commands Used:
 ```bash
-pip installed django
-django-admin startprject taks_manager
+pip install django
+django-admin startprject tasks_manager
 cd task_manager
 python manage.py startapp tasks
 python manage.py makemigrations
@@ -116,7 +129,7 @@ Status: ✅ Completed
 
 # ⏳ Step 3: Task Management (CRUD)
 
-Planned Features:
+Implemented Features:
 - Create Task
 - View Task
 - Update Task
@@ -152,18 +165,16 @@ Status: ✅ Completed
 
 Status: ✅ Completed
 
-
-```
-
 # ⏳ Step 5: Database Upgrade
 
-Planned Features:
+Implemented Features:
 - Configure PostgreSQL
 - Connect Django with PostgreSQL
 - Migrate database from SQLite to PostgreSQL
 
-Status: 🔄 In Progress
+Status: ✅ Completed
 
+```
 
 ## ⏳ Step 6: REST API (Django REST Framework)
 Planned Features:
@@ -172,13 +183,21 @@ Planned Features:
 - Authentication API
 - API endpoints for CRUD operations
 
-Status: ⏳ Pending
+Status: 🔄 In Progress
+
+## ⏳ Step 7: Deployment
+Planned Features:
+
+- Deployment (Render)
 
 ---
 
 ## 👨‍💻 Author
-- Mamun_Bepari
+
+- [Mamun Bepari] 
 - Aspiring Backend Developer (Python & Django)
+
+GitHub: https://github.com/mamun-2025
 
 
 
