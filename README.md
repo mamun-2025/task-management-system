@@ -24,6 +24,7 @@ The goal of this project is to learn an implement:
  Backend:
  - Python 
  - Django
+ - Django REST Framework(DRF)
 
 Database:
 - SQLite (Development)
@@ -49,6 +50,10 @@ Tools:
 - Task Status Tracking
 - Responsive UI with Tailwind CSS
 - PostgreSQL Database Integration
+- Environment Variables (.env)
+- Django REST Framework APIs
+- Token Authentication
+- Postman API Testing
 
 ---
 
@@ -190,16 +195,58 @@ Implemented Features:
 
 Status: ✅ Completed
 
+
+## ⏳ Step 6: REST API Development (Django REST Framework)
+
+Implemented Features:
+
+- Created REST APIs using Django REST Framework (DRF)
+- Implemented Task Serializer to convert model data into JSON
+- Built CRUD API endpoints for tasks
+- Added Token Authentication for secure API access
+- Restricted API access using `IsAuthenticated` permission
+- Each user can access only their own tasks
+- Tested APIs using Postman
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|------|------|------|
+| GET | /api/tasks/ | Get all tasks |
+| POST | /api/tasks/create/ | Create new task |
+| GET | /api/tasks/<int:pk>/ | Get task details |
+| PUT | /api/tasks/<int:pk>/update/ | Update task |
+| DELETE | /api/tasks/<int:pk>/delete/ | Delete task |
+| POST | /api/login/ | Get authentication token |
+
+### Example API Response
+```json
+[
+  {
+    "id": 1,
+    "title": "Learn Django REST Framework",
+    "status": "Pending",
+    "priority": "High"
+  }
+]
+
+Status: ✅ Completed
+
 ```
+## 🧪 API Testing
 
-## ⏳ Step 6: REST API (Django REST Framework)
-Planned Features:
+All APIs were tested using Postman.
 
-- Task API
-- Authentication API
-- API endpoints for CRUD operations
+Steps:
+1. Send POST request to `/api/login/`
+2. Get authentication token
+3. Add token in header:
 
-Status: 🔄 In Progress
+Authorization: Token your_token_here
+
+4. Access protected endpoints such as `/api/tasks/`
+
+---
 
 ## ⏳ Step 7: Deployment
 Planned Features:
