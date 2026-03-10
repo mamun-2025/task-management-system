@@ -32,8 +32,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tasks'
+    'tasks',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
+
+# Django REST Framework configuration
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': [
+      'rest_framework.authentication.TokenAuthentication',
+   ],
+   'DEFAULT_PERMISSION_CLASSES': [
+      'rest_framework.permissions.IsAuthenticated',
+   ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,3 +135,5 @@ STATICFILES_DIRS = [
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
+
+
