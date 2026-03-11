@@ -2,6 +2,7 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+import dj_database_url
 
 # Load environment variables from .env file
 load_dotenv()
@@ -20,7 +21,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['Task-Management-System.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -35,6 +36,7 @@ INSTALLED_APPS = [
     'tasks',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
 ]
 
 # Django REST Framework configuration
@@ -53,6 +55,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -60,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'core.urls'
 
@@ -84,15 +89,20 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#       'ENGINE': 'django.db.backends.postgresql',
+#       'NAME': os.getenv('DB_NAME'),
+#       'USER': os.getenv('DB_USER'),
+#       'PASSWORD': os.getenv('DB_PASSWORD'),
+#       'HOST': os.getenv('DB_HOST'),
+#       'PORT': os.getenv('DB_PORT'),
+#    }
+# }
+
+# Use dj-database-url with NEON DATABASE_URL
 DATABASES = {
-   'default': {
-      'ENGINE': 'django.db.backends.postgresql',
-      'NAME': os.getenv('DB_NAME'),
-      'USER': os.getenv('DB_USER'),
-      'PASSWORD': os.getenv('DB_PASSWORD'),
-      'HOST': os.getenv('DB_HOST'),
-      'PORT': os.getenv('DB_PORT'),
-   }
+   'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 # Password validation
@@ -130,6 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
    BASE_DIR / 'tasks' / 'static',
