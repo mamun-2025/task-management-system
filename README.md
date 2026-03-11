@@ -16,6 +16,7 @@ The goal of this project is to learn an implement:
 - PostgreSQL Database Integration
 - REST API Development
 - Deployment
+- Advanced API Features(API Pagination,Search API,Filter API)
 
 ---
 
@@ -25,6 +26,7 @@ The goal of this project is to learn an implement:
  - Python 
  - Django
  - Django REST Framework(DRF)
+ - JWT Authentication(DRF)
 
 Database:
 - SQLite (Development)
@@ -53,6 +55,7 @@ Tools:
 - Environment Variables (.env)
 - Django REST Framework APIs
 - Token Authentication
+- JWT Authentication
 - Postman API Testing
 
 ---
@@ -208,56 +211,103 @@ Implemented Features:
 - Each user can access only their own tasks
 - Tested APIs using Postman
 
-### API Endpoints
+Status: ✅ Completed
 
-| Method | Endpoint | Description |
-|------|------|------|
-| GET | /api/tasks/ | Get all tasks |
-| POST | /api/tasks/create/ | Create new task |
-| GET | /api/tasks/<int:pk>/ | Get task details |
-| PUT | /api/tasks/<int:pk>/update/ | Update task |
-| DELETE | /api/tasks/<int:pk>/delete/ | Delete task |
-| POST | /api/login/ | Get authentication token |
+⏳ Step 7: JWT Authentication (SimpleJWT)
 
-### Example API Response
-```json
-[
-  {
-    "id": 1,
-    "title": "Learn Django REST Framework",
-    "status": "Pending",
-    "priority": "High"
-  }
-]
+Implemented Features:
+
+1. Implemented JWT Authentication using Django REST Framework
+2. Used Simple JWT for secure token-based authentication
+3. Login API returns Access Token and Refresh Token
+4. Access Token is used to access protected API endpoints
+5. Refresh Token is used to generate a new Access Token
+6. Added JWT authentication to DRF settings
+
+
+## 🧪 API Testing (Postman)
+
+All APIs were tested using Postman.
+
+- Token Authentication Testing:
+Steps 1:
+Send POST request to
+/api/login/
+
+Get authentication token
+Add token in header:
+Authorization: Token your_token_here
+
+Access protected endpoints such as:
+/api/tasks/
+
+- JWT Authentication Testing:
+Steps 2:
+Send POST request to
+/api/token/
+Body:
+
+{
+  "username": "admin",
+  "password": "yourpassword"
+}
+Copy the access token
+Add it in header:
+Authorization: Bearer your_access_token
+
+Test protected endpoints:
+/api/tasks/
+Refresh Token Testing
+
+Send POST request to:
+/api/token/refresh/
+Body:
+
+{
+  "refresh": "your_refresh_token"
+}
+
+Response:
+
+{
+  "access": "new_access_token"
+}
+
+- API Testing Tools
+Postman for API testing
+Django Admin Panel for database management
 
 Status: ✅ Completed
 
 ```
-## 🧪 API Testing
 
-All APIs were tested using Postman.
+## ⏳ Step 8: Deployment
+The project will be deployed using Render 
+Planned Features:
 
-Steps:
-1. Send POST request to `/api/login/`
-2. Get authentication token
-3. Add token in header:
+- Connect GitHub repository to Render
+- Deploy Django Project(Render)
 
-Authorization: Token your_token_here
-
-4. Access protected endpoints such as `/api/tasks/`
+Status: ⏳ In Progress
 
 ---
 
-## ⏳ Step 7: Deployment
+## ⏳ Step 9: Advanced API Features (Future Update)
+
+Future improvements planned using Django REST Framework.
 Planned Features:
 
-- Deployment (Render)
+- API Pagination
+- Search API
+- Filter API
+
+Status: ⏳ Planned
 
 ---
 
 ## 📸 Screenshots
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 ### Task List
 ![Task List](screenshots/task_list.png)
