@@ -138,6 +138,8 @@ python manage.py migrate
 python manage.py runserver
 python manage.py createsuperuser
 
+```
+
 Status: ✅ Completed
 
 # ⏳ Step 2: Authentication System
@@ -159,22 +161,22 @@ Implemented Features:
 - Update Task
 - Delete Task
 
-### Task Model 
+Task Model 
 - Fields: titile, description, status, priority, due_date, created_at
 - Each task is linked to a user(ForeignKey)
 - Status Choices: Pending, In Progress, Completed
 - Priority Choices: Low, Medium, High
 
-### Task Form
+Task Form
 - TaskForm(ModelForm) for handling task creation and update
 
-### URLs
+URLs
 - `/` → Task List
 - `/task/create/` → Create Task
 - `/task/<id>/update/` → Update Task
 - `/task/<id>/delete/` → Delete Task
 
-### Templates
+Templates
 - `task_list.html` → List all tasks
 - `task_form.html` → Create / Update task
 - `task_confirm_delete.html` → Confirm task deletion
@@ -199,7 +201,7 @@ Implemented Features:
 Status: ✅ Completed
 
 
-## ⏳ Step 6: REST API Development (Django REST Framework)
+# ⏳ Step 6: REST API Development (Django REST Framework)
 
 Implemented Features:
 
@@ -213,7 +215,7 @@ Implemented Features:
 
 Status: ✅ Completed
 
-⏳ Step 7: JWT Authentication (SimpleJWT)
+# ⏳ Step 7: JWT Authentication (SimpleJWT)
 
 Implemented Features:
 
@@ -224,9 +226,7 @@ Implemented Features:
 5. Refresh Token is used to generate a new Access Token
 6. Added JWT authentication to DRF settings
 
-
-## 🧪 API Testing (Postman)
-
+🧪 API Testing (Postman)
 All APIs were tested using Postman.
 
 - Token Authentication Testing:
@@ -279,7 +279,7 @@ Django Admin Panel for database management
 
 Status: ✅ Completed
 
-```
+---
 
 ## ⏳ Step 8: Deployment
 The project will be deployed using Render 
