@@ -62,24 +62,27 @@ Tools:
 
 ## 📂 Project Structure
 
+```text
 Task-Management-System/
 │
-├── README.md                <-- Project documentation and setup guide
+├── core/                    <-- Project configuration (settings.py, urls.py)
+├── tasks/                   <-- Main application logic
+│   ├── static/              <-- CSS/JS assets (Tailwind output.css)
+│   ├── templates/           <-- HTML templates (base.html, dashboard.html)
+│   ├── forms.py             <-- Django ModelForms styled with Tailwind
+│   ├── models.py            <-- Task database models
+│   ├── serializers.py       <-- DRF Serializers for API
+│   ├── signals.py           <-- Signal for auto-token generation
+│   └── views.py             <-- Dashboard logic and task views
 │
-└── task_manager/            <-- Main project directory(application)
-    ├── core/                <-- Project configuration (settings.py, urls.py)
-    ├── tasks/               <-- Main application logic
-    │   ├── static/          <-- CSS/JS assets (Tailwind output.css)
-    │   ├── templates/       <-- HTML templates (base.html, dashboard.html)
-    │   ├── forms.py         <-- Django ModelForms styled with Tailwind
-    │   ├── models.py        <-- Task database models
-    │   └── views.py         <-- Dashboard logic and task views
-    ├── manage.py            <-- Django's command-line utility
-    ├── node_modules/        <-- Tailwind CSS v4 dependencies (Local only)
-    ├── package.json         <-- NPM script configurations
-    └── package-lock.json    <-- Locked versions of frontend dependencies
-    ├── .gitignore               <-- Specifies ignored files (venv, .env, node_modules, etc.)
-    
+├── manage.py                <-- Django's command-line utility
+├── requirements.txt         <-- Python dependencies list
+├── Procfile                 <-- Deployment commands for Render/Heroku
+├── .gitignore               <-- Files to ignore (venv, .env, node_modules)
+├── package.json             <-- NPM script configurations
+└── README.md                <-- Project documentation
+```
+
 --- 
 
 ## ⚙️ Environment Setup
@@ -307,7 +310,7 @@ Status: ⏳ Planned
 
 ## 📸 Screenshots
 ### Dashboard
-![Dashboard](screenshots/Dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 ### Task List
 ![Task List](screenshots/task_list.png)
