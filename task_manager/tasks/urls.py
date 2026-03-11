@@ -16,6 +16,11 @@ from .views import (
    api_task_delete,
    api_login,
  )
+# JWT views import for token-bases authentication
+from rest_framework_simplejwt.views import (
+   TokenObtainPairView,
+   TokenRefreshView,
+)
 
 
 urlpatterns = [
@@ -40,13 +45,16 @@ urlpatterns = [
 
     # 1. Authentication API (Token-based login endpoint)
     path('api/login/', api_login, name='api_login'),
-
     # 2. Task CRUD APIs token authentication and only access users
     path('api/tasks/', api_task_list, name='api_task_list'),
     path('api/tasks/<int:pk>/', api_task_detail, name='api_task_detail'),
     path('api/tasks/create/', api_task_create, name='api_task_create'),
     path('api/tasks/<int:pk>/update/', api_task_update, name='api_task_update'),
     path('api/tasks/<int:pk>/delete/', api_task_delete, name='api_task_delete'),
+
+    # JWT token authentication endpoints for obtaining and refreshing tokens
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
 ]
 
