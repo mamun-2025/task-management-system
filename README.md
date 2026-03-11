@@ -57,6 +57,7 @@ Tools:
 - Token Authentication
 - JWT Authentication
 - Postman API Testing
+- Render Deployment
 
 ---
 
@@ -77,7 +78,7 @@ Task-Management-System/
 │
 ├── manage.py                <-- Django's command-line utility
 ├── requirements.txt         <-- Python dependencies list
-├── Procfile                 <-- Deployment commands for Render/Heroku
+├── Procfile                 <-- Deployment commands for Render
 ├── .gitignore               <-- Files to ignore (venv, .env, node_modules)
 ├── package.json             <-- NPM script configurations
 └── README.md                <-- Project documentation
@@ -286,12 +287,12 @@ Status: ✅ Completed
 
 ## ⏳ Step 8: Deployment
 The project will be deployed using Render 
-Planned Features:
+Implemented Features:
 
 - Connect GitHub repository to Render
 - Deploy Django Project(Render)
 
-Status: ⏳ In Progress
+Status: ✅ Completed
 
 ---
 
@@ -314,6 +315,16 @@ Status: ⏳ Planned
 
 ### Task List
 ![Task List](screenshots/task_list.png)
+
+---
+
+## 🌐 Live Demo
+
+Deployment URL:
+
+https://task-manager-app-l3r1.onrender.com
+
+---
 
 ## 👨‍💻 Author
 
