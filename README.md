@@ -117,7 +117,7 @@ The project is live on Render using a hybrid architecture:
 - Database: Neon PostgreSQL (Persistent)
 - Cache: Upstash Redis (Serverless)
 
-🔗 Live Link: https://task-manager-app-l3r1.onrender.com
+🔗 Live Link: https://task-manager-app-3iv2.onrender.com
 
 ---
 
