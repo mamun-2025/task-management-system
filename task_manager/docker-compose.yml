@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: task_manager_db
+      POSTGRES_USER: mamun
+      POSTGRES_PASSWORD: password123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DOCKER_RUNNING=True
+      - DATABASE_URL=postgres://mamun:password123@db:5432/task_manager_db
+      - DEBUG=True
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+

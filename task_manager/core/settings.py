@@ -2,7 +2,6 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-import dj_database_url
 
 # Load environment variables from .env file
 load_dotenv()
@@ -89,24 +88,33 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#       'ENGINE': 'django.db.backends.postgresql',
-#       'NAME': os.getenv('DB_NAME'),
-#       'USER': os.getenv('DB_USER'),
-#       'PASSWORD': os.getenv('DB_PASSWORD'),
-#       'HOST': os.getenv('DB_HOST'),
-#       'PORT': os.getenv('DB_PORT'),
-#    }
-# }
+# settings.py এর ডাটাবেস অংশ
+import dj_database_url
 
-# Use dj-database-url with NEON DATABASE_URL
+# ডকারের জন্য ডিফল্ট ইউআরএল সরাসরি এখানে লিখে দিন
+DOCKER_DB_URL = "postgres://mamun:password123@db:5432/task_manager_db"
+
 DATABASES = {
-   'default': dj_database_url.config(
-      default=os.getenv('DATABASE_URL'),
-      conn_max_age=600,
-      ssl_require=True
+    'default': dj_database_url.parse(
+        os.getenv('DATABASE_URL', DOCKER_DB_URL),
+        conn_max_age=600,
+        ssl_require=False
     )
+}
+
+DOCKER_RUNNING =  os.getenv('DOCKER_RUNNING', 'False') == 'True'
+# এবার ক্যাশ সেটিংসে (CACHES) গিয়ে এই পরিবর্তনটি করুন
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.getenv('REDIS_URL', 'redis://redis:6379/1'),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {
+                "ssl_cert_reqs": None
+            }
+        }
+    }
 }
 
 # Password validation
@@ -155,4 +163,9 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
 
-
+# CSRF সেটিং ডকারের জন্য
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://0.0.0.0:8000',
+]
